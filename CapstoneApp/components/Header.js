@@ -15,7 +15,8 @@ export default function Header() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
-        marginTop: 40
+        marginTop: 30,
+        paddingVertical: 20,
     },
 
     imgContainer: {

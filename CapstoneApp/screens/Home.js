@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 
 export default function Home() {
     return (
-        <View>
+        <View style={styles.container}>
             <Header />
             <Hero />
 
@@ -13,3 +13,9 @@ export default function Home() {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white',
+    }
+})
