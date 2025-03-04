@@ -7,7 +7,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboarding from './screens/Onboarding';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
-import Hero from './components/Hero';
 
 const Stack = createNativeStackNavigator();
 

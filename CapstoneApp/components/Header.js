@@ -4,8 +4,8 @@ export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.imgContainer}>
-                <Image style={{}} source={require('../assets/Logo.png')} />
-                <Image style={styles.profileImg} source={require('../assets/Profile.png')} resizeMode='cover' accessibility={true} accessibilityLabel='Profile Logo' />
+                <Image source={require('../assets/Logo.png')} accessibility={true} accessibilityLabel='Little Lemon Logo' />
+                <Image style={styles.profileImg} source={require('../assets/Profile.png')} resizeMode='cover' accessibility={true} accessibilityLabel='Profile Image' />
             </View>
         </View>
     );
