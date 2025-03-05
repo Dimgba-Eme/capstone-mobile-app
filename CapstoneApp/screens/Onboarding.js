@@ -18,7 +18,7 @@ export default function Onboarding({ navigation}) {
             Alert.alert('Attention!', 'Incorrect Email!');
         } else {
             // navigation.navigate('Home');
-            navigation.navigate('Profile')
+            navigation.navigate('Profile', {user: name})
         }
     }
 

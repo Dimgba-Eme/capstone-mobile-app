@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 
 
-export default function Home() {
+export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <Header />
@@ -12,22 +12,22 @@ export default function Home() {
                 <Text style={styles.orderText}>ORDER FOR DELIVERY!</Text>
 
                 <View style={styles.btnContainer} >
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Starters</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Mains</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Desserts</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Drinks</Text>
                         </View>
