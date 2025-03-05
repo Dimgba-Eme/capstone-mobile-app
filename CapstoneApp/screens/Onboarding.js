@@ -4,19 +4,24 @@ import { StyleSheet, Text, View, Image, KeyboardAvoidingView, ScrollView, TextIn
 import Hero from '../components/Hero';
 import { validateEmail } from '../utils/utils';
 
-export default function Onboarding({navigation}) {
+export default function Onboarding({ navigation}) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+
+
+    const isEmailValid = validateEmail(email);
 
     const handleSubmit = () => {
         if (!name || !email) {
             Alert.alert('Attention!', 'Please enter both fields');
-        }else {
-            navigation.navigate('Home');
+        } else if (!isEmailValid) {
+            Alert.alert('Attention!', 'Incorrect Email!');
+        } else {
+            // navigation.navigate('Home');
+            navigation.navigate('Profile')
         }
     }
 
-    
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <View style={styles.imgContainer}>
@@ -43,7 +48,7 @@ export default function Onboarding({navigation}) {
                         keyboardType='email-address'
                     />
 
-                    <TouchableOpacity style={styles.btnContainer} onPress={handleSubmit}>
+                    <TouchableOpacity style={styles.btnContainer} onPress={handleSubmit} >
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Submit</Text>
                         </View>
