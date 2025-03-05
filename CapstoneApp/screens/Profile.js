@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView, Image } from 'react-native';
 import Header from '../components/Header';
 
 export default function Profile({ navigation }) {
@@ -7,6 +7,11 @@ export default function Profile({ navigation }) {
             <Header />
             <ScrollView style={styles.scrollContainer}>
                 <Text style={styles.title}>Personal Information</Text>
+                <View>
+                <Image style={styles.profileImg} source={require('../assets/Profile.png')} resizeMode='cover' accessibility={true} accessibilityLabel='Profile Image' />
+                 
+                </View>
+
             </ScrollView>
         </KeyboardAvoidingView>
     );
@@ -32,4 +37,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#333333'
     },
+
+    profileImg: {
+        height: 100,
+        width: 100,
+        marginVertical: 20,
+    }
 })
