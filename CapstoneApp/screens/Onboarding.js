@@ -1,11 +1,19 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Image, KeyboardAvoidingView, ScrollView, TextInput, Platform, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, KeyboardAvoidingView, ScrollView, TextInput, Platform, TouchableOpacity, Alert } from 'react-native';
 // import Header from '../components/Header';
 import Hero from '../components/Hero';
 
-export default function Onboarding() {
+export default function Onboarding({navigation}) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+
+    const handleSubmit = () => {
+        if (!name || !email) {
+            Alert.alert('Attention!', 'Please enter both fields');
+        }else {
+            navigation.navigate('Home');
+        }
+    }
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <View style={styles.imgContainer}>
@@ -29,9 +37,10 @@ export default function Onboarding() {
                         value={email}
                         onChangeText={setEmail}
                         placeholder='Enter email'
+                        keyboardType='email-address'
                     />
 
-                    <TouchableOpacity style={styles.btnContainer}>
+                    <TouchableOpacity style={styles.btnContainer} onPress={handleSubmit}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Submit</Text>
                         </View>
