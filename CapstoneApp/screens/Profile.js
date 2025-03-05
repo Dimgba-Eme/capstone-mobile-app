@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, KeyboardAvoidingView, Image, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 
 export default function Profile({ navigation }) {
@@ -7,9 +7,20 @@ export default function Profile({ navigation }) {
             <Header />
             <ScrollView style={styles.scrollContainer}>
                 <Text style={styles.title}>Personal Information</Text>
-                <View>
-                <Image style={styles.profileImg} source={require('../assets/Profile.png')} resizeMode='cover' accessibility={true} accessibilityLabel='Profile Image' />
-                 
+
+                <View style={styles.innerContainer}>
+                    <Image style={styles.profileImg} source={require('../assets/Profile.png')} resizeMode='cover' accessibility={true} accessibilityLabel='Profile Image' />
+                    <TouchableOpacity>
+                        <View style={styles.btn}>
+                            <Text style={styles.btnText}>Change</Text>
+                        </View>
+                    </TouchableOpacity >
+
+                    <TouchableOpacity>
+                        <View style={[styles.btn, {backgroundColor: 'none', borderWidth: 1, borderColor: '#ccc', borderRadius: 0}]}>
+                            <Text style={[styles.btnText, {color: '#333333' }]}>Remove</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
 
             </ScrollView>
@@ -39,8 +50,30 @@ const styles = StyleSheet.create({
     },
 
     profileImg: {
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
         marginVertical: 20,
+    },
+
+    innerContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    },
+
+    btn: {
+        backgroundColor: '#495E57',
+        width: '100%',
+        padding: 20,
+        borderRadius: 10,
+        marginVertical: 30,
+
+    },
+
+    btnText: {
+        fontSize: 16,
+        color: '#fff',
+        fontWeight: 'bold',
+        textAlign: 'center',
     }
 })
