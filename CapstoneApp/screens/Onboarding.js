@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Image, KeyboardAvoidingView, ScrollView, TextInput, Platform, TouchableOpacity, Alert } from 'react-native';
-// import Header from '../components/Header';
 import Hero from '../components/Hero';
 import { validateEmail } from '../utils/utils';
 
-export default function Onboarding({ navigation}) {
+export default function Onboarding({ navigation }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
@@ -18,7 +17,7 @@ export default function Onboarding({ navigation}) {
             Alert.alert('Attention!', 'Incorrect Email!');
         } else {
             // navigation.navigate('Home');
-            navigation.navigate('Profile', {user: name})
+            navigation.navigate('Profile', { user: name })
         }
     }
 

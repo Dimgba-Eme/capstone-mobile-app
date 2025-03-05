@@ -12,22 +12,22 @@ export default function Home({ navigation }) {
                 <Text style={styles.orderText}>ORDER FOR DELIVERY!</Text>
 
                 <View style={styles.btnContainer} >
-                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: 'User' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Starters</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: 'User' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Mains</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: 'User' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Desserts</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: '' }) }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Profile', { user: 'User' }) }}>
                         <View style={styles.btn}>
                             <Text style={styles.btnText}>Drinks</Text>
                         </View>
